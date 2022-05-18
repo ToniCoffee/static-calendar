@@ -101,13 +101,9 @@ const createWeekDays = (weekDay) => {
   return li;
 };
 
-const createDays = (day, today, monthIndex /* , index, startsOn */) => {
+const createDays = (day, today, monthIndex) => {
   const li = document.createElement('li');
   li.classList.add('calendar-day');
-  /* if (index === 0) {
-    li.classList.add('first-day');
-    li.setAttribute('style', `--first-day-start: ${startsOn}`);
-  } */
   if (monthIndex === today.getMonth() && day === today.getDate()) {
     li.classList.add('today');
   }
@@ -188,11 +184,8 @@ const createCalendar = (
 };
 
 createCalendar('es');
-// console.log(getMonths('es'));
 
 const selector = document.getElementById('selector');
 selector.addEventListener('change', (e) => {
-  // console.log(e.target.value);
   changeLanguage(e.target.value);
 });
-// console.log(selector.value);
